@@ -62,7 +62,7 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #60a5fa;
         }
-        /* 레이더 스캔라인 효과 (라이트모드 최적화) */
+        /* 레이더 스캔라인 효과 */
         @keyframes radar-scan {
             0% { transform: translateY(-100%); }
             100% { transform: translateY(100%); }
@@ -76,7 +76,7 @@
 
     <!-- 메인 컨텐츠 영역 Wrapper -->
     <div>
-        <!-- 상단 인트로/네비게이션 헤더 (라이트모드) -->
+        <!-- 상단 인트로/네비게이션 헤더 -->
         <header class="border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-40 shadow-sm transition-all duration-300">
             <div class="max-w-[1750px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center space-x-4">
@@ -121,7 +121,7 @@
             <!-- 상단 영역: 왼쪽(타이머) 및 오른쪽(미션 브리핑 & 토론 주제 리스트) -->
             <section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 
-                <!-- [상단-왼쪽] 5분 카운트다운 타이머 (4/12) - 크기 스케일 업 (라이트모드) -->
+                <!-- [상단-왼쪽] 5분 카운트다운 타이머 -->
                 <div class="lg:col-span-4 bg-white rounded-2xl p-6 neon-border-blue relative overflow-hidden flex flex-col justify-between h-[420px] min-h-[420px] shadow-sm">
                     <div class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.01)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
                     
@@ -165,7 +165,7 @@
                 <!-- [상단-오른쪽] 현재 미션 브리핑 카드 및 주제 목록 (8/12) -->
                 <div class="lg:col-span-8 space-y-6 flex flex-col justify-between">
                     
-                    <!-- 대형 실시간 미션 브리핑 보드 (설명 없이 심플하게 주제만 제시되도록 최적화) -->
+                    <!-- 대형 실시간 미션 브리핑 보드 (주제 설명 없이 극단적으로 시인성 극대화) -->
                     <div id="activeTopicNotification" class="bg-white p-6 md:p-8 rounded-2xl border-3 border-cyan-500 shadow-md relative overflow-hidden flex-1 flex flex-col justify-center min-h-[200px]">
                         <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(6,182,212,0.04)_2px,transparent_2px)] bg-[size:100%_6px] opacity-30 pointer-events-none"></div>
                         <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent radar-scan-line pointer-events-none"></div>
@@ -194,7 +194,7 @@
                             <span class="text-xs text-slate-400">주제별 [수정] 및 [삭제]가 가능합니다 (최소 1개 유지 필요)</span>
                         </div>
 
-                        <!-- 가로형 스크롤 또는 유동 그리드형 주제 목록 (설명 없이 주제만 심플하게 구현) -->
+                        <!-- 가로형 스크롤 또는 유동 그리드형 주제 목록 -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="topicList">
                             <!-- JS에서 동적으로 카드 렌더링 -->
                         </div>
@@ -211,7 +211,7 @@
                 </div>
             </section>
 
-            <!-- [중간 영역] 모둠별 토론 내용 입력판 (라이트모드 최적화) -->
+            <!-- [중간 영역] 모둠별 토론 내용 입력판 -->
             <section class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
                 <div class="flex flex-wrap justify-between items-center mb-6 pb-4 border-b border-slate-100 gap-4">
                     <div class="flex items-center space-x-3">
@@ -232,13 +232,13 @@
                     </div>
                 </div>
 
-                <!-- 1~N모둠용 대형 토론 내용 기입 텍스트 카드 그리드 -->
+                <!-- N개 모둠 토론 기록지 그리드 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="discussionInputGrid">
                     <!-- JS에서 모둠별 텍스트 박스 자동 빌드 -->
                 </div>
             </section>
 
-            <!-- [추가된 제어 영역] 랜덤 모둠 배치 제어기 (결석생 제외 기능 및 5초 카운트 연동) -->
+            <!-- [추가된 제어 영역] 랜덤 모둠 배치 제어기 -->
             <section class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
                 <div class="flex flex-wrap justify-between items-center mb-5 pb-3 border-b border-slate-100 gap-4">
                     <div class="flex items-center space-x-3">
@@ -280,7 +280,7 @@
                         </label>
                         <input id="inputEndNum" type="number" min="1" value="30" class="w-full bg-slate-50 text-sm font-bold text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition shadow-sm">
                     </div>
-                    <!-- 제외 번호 필터 (결석 번호 제외 연동) -->
+                    <!-- 제외 번호 필터 (결석생 제외) -->
                     <div class="space-y-1.5">
                         <label class="text-xs font-extrabold text-red-500 flex items-center gap-1.5">
                             <i class="fa-solid fa-user-slash text-red-500"></i> 제외할 번호 (결석)
@@ -301,7 +301,7 @@
                 </div>
             </section>
 
-            <!-- [하단 영역] 모둠 배치도 가로형 와이드 레이아웃 -->
+            <!-- [하단 영역] 모둠 배치도 가로형 와이드 레이아웃 (의리T 요청: 한 줄에 무조건 3개 배치하도록 대폭 확대 개편) -->
             <section class="space-y-4">
                 <div class="flex items-center justify-between px-1">
                     <span class="text-xs md:text-sm font-extrabold text-slate-500 tracking-widest uppercase flex items-center gap-2">
@@ -310,9 +310,9 @@
                     <span class="text-xs text-slate-400">학생 이름 클릭 후 아래 "모둠장 배찌"를 누르면 대장이 설정되며, 각 자리의 [x]를 누르면 대원이 제외됩니다.</span>
                 </div>
 
-                <!-- 동적 가로형 랩 그리드로 자동 배치 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5" id="groupCardsContainer">
-                    <!-- JS에서 모둠 배치도 콤팩트 카드 동적 생성 -->
+                <!-- 한 줄에 모둠 3개 배치 전용 그리드 (grid-cols-1 md:grid-cols-2 lg:grid-cols-3) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="groupCardsContainer">
+                    <!-- JS에서 모둠 배치도 초대형 카드 동적 생성 -->
                 </div>
             </section>
 
@@ -320,20 +320,20 @@
     </div>
 
     <!-- [대형 카운트다운 레이어 팝업] 교실 이목 집중용 -->
-    <div id="countdownPopupOverlay" class="fixed inset-0 bg-slate-900/90 backdrop-blur-xl z-50 flex flex-col items-center justify-center hidden">
-        <div class="text-center space-y-6">
-            <div class="text-indigo-400 text-lg md:text-xl font-bold tracking-widest animate-pulse uppercase digital-font">
-                <i class="fa-solid fa-space-shuttle rotate-[-45deg] mr-2 text-cyan-400"></i> SYSTEM COOLDOWN / PRE-LAUNCH INITIATED
+    <div id="countdownPopupOverlay" class="fixed inset-0 bg-slate-900/95 backdrop-blur-2xl z-50 flex flex-col items-center justify-center hidden">
+        <div class="text-center space-y-8 animate-pulse">
+            <div class="text-indigo-400 text-xl md:text-2xl font-black tracking-widest uppercase digital-font">
+                <i class="fa-solid fa-space-shuttle rotate-[-45deg] mr-3 text-cyan-400 animate-bounce"></i> SYSTEM COOLDOWN / PRE-LAUNCH INITIATED
             </div>
-            <!-- 실시간 카운팅 숫자 -->
-            <div id="countdownPopupNumber" class="digital-font text-[150px] md:text-[220px] font-black text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-indigo-600 select-none drop-shadow-[0_10px_50px_rgba(6,182,212,0.6)]">
+            <!-- 실시간 카운팅 숫자 (네온 이펙트 강화) -->
+            <div id="countdownPopupNumber" class="digital-font text-[180px] md:text-[260px] font-black text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-blue-600 select-none drop-shadow-[0_15px_60px_rgba(6,182,212,0.8)] leading-none">
                 5
             </div>
-            <div class="text-slate-300 font-extrabold text-lg md:text-2xl tracking-widest">
-                우주선 좌석을 무작위로 매핑하는 중입니다. 잠시만 대기해 주세요!
+            <div class="text-slate-300 font-extrabold text-xl md:text-3xl tracking-widest">
+                우주선 좌석을 배정하는 중입니다. 궤도를 고정해 주세요!
             </div>
-            <div class="w-64 h-2 bg-slate-800 rounded-full mx-auto overflow-hidden relative">
-                <div class="h-full bg-cyan-400 rounded-full w-full origin-left scale-x-0 animate-pulse transition-transform duration-500"></div>
+            <div class="w-80 h-3 bg-slate-800 rounded-full mx-auto overflow-hidden relative border border-slate-700">
+                <div id="countdownProgressBar" class="h-full bg-cyan-400 rounded-full w-full origin-left scale-x-0 transition-transform duration-1000 ease-out"></div>
             </div>
         </div>
     </div>
@@ -403,28 +403,14 @@
             }
         }
 
-        // 미션 완료 종료음 (SFX: 강력하게 이목을 집중시키는 긴박한 삐-뽀-삐-뽀 경보음 + 웅장한 대형 종소리)
-        function playMissionCompleteSound() {
+        // 팝업창이 닫히면서 나는 짧고 강렬한 임팩트 오디오 효과음
+        function playShortImpactSound() {
             if (audioInitialized && synth) {
                 const now = Tone.now();
-                
-                // 1단계: 교실 전체 이목을 즉각 집중시키는 삐-뽀 경보음 (4회 왕복)
-                synth.triggerAttackRelease("A5", "8n", now);
-                synth.triggerAttackRelease("F5", "8n", now + 0.2);
-                synth.triggerAttackRelease("A5", "8n", now + 0.4);
-                synth.triggerAttackRelease("F5", "8n", now + 0.6);
-                synth.triggerAttackRelease("A5", "8n", now + 0.8);
-                synth.triggerAttackRelease("F5", "8n", now + 1.0);
-                synth.triggerAttackRelease("A5", "4n", now + 1.2);
-
-                // 2단계: 신성하고 웅장한 도덕 미션 종결 차임 팡파레
-                setTimeout(() => {
-                    const t = Tone.now();
-                    synth.triggerAttackRelease("C5", "4n", t);
-                    synth.triggerAttackRelease("G5", "4n", t + 0.3);
-                    synth.triggerAttackRelease("E5", "4n", t + 0.6);
-                    synth.triggerAttackRelease("C6", "2n", t + 0.9);
-                }, 1500);
+                // 슝-! 콰광! 느낌의 촘촘한 고주파 더블 슬라이드 타격 (매우 짧고 타이트하게 설계)
+                synth.triggerAttackRelease("C6", "32n", now);
+                synth.triggerAttackRelease("G5", "32n", now + 0.05);
+                synth.triggerAttackRelease("C5", "16n", now + 0.1);
             }
         }
 
@@ -497,7 +483,7 @@
                         document.getElementById('playText').innerText = "미션 재시작";
                         
                         // 미션 완료 종료음 재생!
-                        playMissionCompleteSound();
+                        playShortImpactSound();
                     }
                 }, 1000);
             }
@@ -695,7 +681,7 @@
             selectTopic(newTopicId);
         }
 
-        // ----------------- [3. 실시간 모둠별 토론 내용 입력 엔진 (가독성 강화 - 라이트모드)] -----------------
+        // ----------------- [3. 실시간 모둠별 토론 내용 입력 엔진 (가독성 강화)] -----------------
         function renderDiscussionInputs() {
             const gridContainer = document.getElementById('discussionInputGrid');
             const groupIds = Object.keys(groupsState).sort((a, b) => parseInt(a) - parseInt(b));
@@ -765,7 +751,7 @@
             };
         });
 
-        // 하단 모둠 자리 배치 카드 렌더링 (가독성 향상: 좌석 번호 및 학생 이름 폰트 극대화)
+        // 하단 모둠 자리 배치 카드 렌더링 (의리T 요청: 한 줄에 모둠 딱 3개씩 배치해 가독성 대폭 향상!)
         function renderGroupSeating() {
             const container = document.getElementById('groupCardsContainer');
             const groupList = Object.values(groupsState).sort((a, b) => a.id - b.id);
@@ -774,20 +760,20 @@
             document.getElementById('headerGroupCount').innerText = groupList.length;
 
             container.innerHTML = groupList.map(group => `
-                <div id="groupCard-${group.id}" class="bg-white rounded-2xl p-4 border border-slate-200 hover:shadow-md hover:scale-[1.02] transition-all duration-300 relative overflow-hidden group ${group.border}">
+                <div id="groupCard-${group.id}" class="bg-white rounded-3xl p-6 border-2 border-slate-200/80 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 relative overflow-hidden group ${group.border} shadow-sm">
                     <!-- 그라데이션 광원 효과 -->
-                    <div class="absolute inset-0 bg-gradient-to-br ${group.color} opacity-40 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br ${group.color} opacity-50 pointer-events-none"></div>
                     
-                    <div class="flex justify-between items-center mb-3 relative z-10">
-                        <span class="text-[10px] md:text-xs font-black tracking-wider ${group.accent} flex items-center gap-1">
-                            <i class="fa-solid fa-users"></i> ST-${group.id}
+                    <div class="flex justify-between items-center mb-4 relative z-10 border-b border-slate-100 pb-2">
+                        <span class="text-xs md:text-sm font-black tracking-widest ${group.accent} flex items-center gap-1.5 uppercase">
+                            <i class="fa-solid fa-users text-base animate-pulse"></i> STATION ${group.id}
                         </span>
-                        <h4 class="text-xs md:text-sm font-black text-slate-800">${group.id}모둠</h4>
+                        <h4 class="text-base md:text-lg font-black text-slate-800">${group.id}모둠</h4>
                     </div>
 
                     <!-- 콤팩트 격자 자리 배치도 (좌석 및 번호 폰트 크기 업그레이드) -->
-                    <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 mb-3 relative z-10">
-                        <div class="grid grid-cols-2 gap-2 max-h-[250px] overflow-y-auto pr-1">
+                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 mb-4 relative z-10">
+                        <div class="grid grid-cols-2 gap-3 max-h-[350px] overflow-y-auto pr-1">
                             ${group.students.map((student, idx) => {
                                 const isCaptain = group.captain === idx;
                                 const isSelected = group.selectedSeat === idx;
@@ -795,25 +781,25 @@
                                 
                                 let activeBorderClass = 'border-slate-200 bg-white';
                                 if (isCaptain) {
-                                    activeBorderClass = 'border-yellow-500 bg-yellow-50/50 shadow-sm';
+                                    activeBorderClass = 'border-yellow-500 bg-yellow-50/50 shadow-md';
                                 } else if (isSelected) {
-                                    activeBorderClass = 'border-cyan-500 bg-cyan-50 ring-2 ring-cyan-500/20';
+                                    activeBorderClass = 'border-cyan-500 bg-cyan-50 ring-2 ring-cyan-500/30';
                                 }
 
                                 return `
                                     <div id="studentSeat-${group.id}-${idx}" 
                                          onclick="selectSeat(${group.id}, ${idx})"
-                                         class="student-seat relative border ${activeBorderClass} p-2 rounded-lg flex flex-col items-center transition-all cursor-pointer group/seat shadow-sm">
+                                         class="student-seat relative border-2 ${activeBorderClass} p-3 rounded-xl flex flex-col items-center transition-all cursor-pointer group/seat shadow-sm hover:border-cyan-400">
                                         
                                         <!-- 인원 제거 'x' 단추 (우측 상단) -->
                                         <button onclick="event.stopPropagation(); removeStudent(${group.id}, ${idx})" 
-                                                class="absolute -top-1.5 -right-1.5 bg-red-100 hover:bg-red-600 text-red-600 hover:text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-black border border-red-200 shadow-sm transition-all z-20"
+                                                class="absolute -top-1.5 -right-1.5 bg-red-100 hover:bg-red-600 text-red-600 hover:text-white w-5.5 h-5.5 rounded-full flex items-center justify-center text-[11px] font-black border border-red-200 shadow-sm transition-all z-20"
                                                 title="이 대원 제외">
                                             ×
                                         </button>
 
                                         <!-- 대폭 키운 좌석 번호 라벨 (text-xs md:text-sm font-extrabold) -->
-                                        <span class="text-xs md:text-sm text-slate-500 font-extrabold scale-90 self-start mb-0.5">좌석 ${idx + 1}</span>
+                                        <span class="text-xs md:text-sm text-slate-400 font-extrabold scale-90 self-start mb-1">좌석 ${idx + 1}</span>
                                         
                                         <!-- 대폭 키운 학생 이름 인풋 (text-sm md:text-base lg:text-lg font-black) -->
                                         <input type="text" value="${student}" 
@@ -824,8 +810,8 @@
                                             placeholder="공석">
                                             
                                         <!-- 대장 왕관 배지 -->
-                                        <span id="captainBadge-${group.id}-${idx}" class="absolute -top-2 -left-1.5 bg-yellow-400 text-slate-900 font-black text-[8px] px-1.5 py-0.5 rounded shadow-sm ${captainBadgeClass} transition-transform flex items-center gap-0.5 pointer-events-none">
-                                            <i class="fa-solid fa-crown text-[7px]"></i>대장
+                                        <span id="captainBadge-${group.id}-${idx}" class="absolute -top-2.5 -left-1.5 bg-yellow-400 text-slate-900 font-black text-[9px] px-2 py-0.5 rounded shadow-sm ${captainBadgeClass} transition-transform flex items-center gap-0.5 pointer-events-none">
+                                            <i class="fa-solid fa-crown text-[8px]"></i>대장
                                         </span>
                                     </div>
                                 `;
@@ -835,16 +821,16 @@
 
                     <!-- 대장 임명 및 배지 버튼 -->
                     <div class="flex flex-col gap-2 relative z-10">
-                        <div class="flex gap-1.5">
-                            <button onclick="assignCaptainFromSelection(${group.id})" class="flex-1 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-purple-500/50 text-xs font-bold py-2.5 rounded-lg text-purple-700 hover:text-purple-600 transition flex items-center justify-center gap-1 shadow-sm">
+                        <div class="flex gap-2">
+                            <button onclick="assignCaptainFromSelection(${group.id})" class="flex-1 bg-slate-50 hover:bg-slate-100 border-2 border-slate-200 hover:border-purple-400 text-xs md:text-sm font-black py-3 rounded-xl text-purple-700 hover:text-purple-600 transition flex items-center justify-center gap-1.5 shadow-sm">
                                 <i class="fa-solid fa-crown text-yellow-500"></i> 모둠장 배찌
                             </button>
                             <!-- 대원 추가 버튼 (+) -->
-                            <button onclick="addStudent(${group.id})" class="bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-emerald-500/50 text-slate-500 hover:text-emerald-600 px-3 py-2.5 rounded-lg transition shadow-sm" title="대원 추가">
+                            <button onclick="addStudent(${group.id})" class="bg-slate-50 hover:bg-slate-100 border-2 border-slate-200 hover:border-emerald-400 text-slate-500 hover:text-emerald-600 px-4 py-3 rounded-xl transition shadow-sm" title="대원 추가">
                                 <i class="fa-solid fa-plus text-xs"></i>
                             </button>
                         </div>
-                        <button onclick="resetGroupCaptain(${group.id})" class="w-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-400 hover:text-slate-600 py-1.5 rounded-lg text-[10px] transition shadow-sm" title="대장 초기화">
+                        <button onclick="resetGroupCaptain(${group.id})" class="w-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-400 hover:text-slate-600 py-2 rounded-xl text-xs transition shadow-sm" title="대장 초기화">
                             <i class="fa-solid fa-rotate-left mr-1"></i> 대장 초기화
                         </button>
                     </div>
@@ -869,7 +855,7 @@
                 const isCaptain = group.captain === idx;
                 const isSelected = group.selectedSeat === idx;
                 
-                seatEl.className = "student-seat relative border p-2 rounded-lg flex flex-col items-center transition-all cursor-pointer group/seat shadow-sm";
+                seatEl.className = "student-seat relative border-2 p-3 rounded-xl flex flex-col items-center transition-all cursor-pointer group/seat shadow-sm";
                 
                 if (isCaptain) {
                     seatEl.classList.add('border-yellow-500', 'bg-yellow-50/50');
@@ -916,7 +902,7 @@
             renderGroupSeating();
             renderDiscussionInputs();
 
-            playMissionCompleteSound();
+            playShortImpactSound();
         }
 
         function removeStudent(groupId, seatIndex) {
@@ -1010,6 +996,19 @@
             statusMsg.className = "text-xs font-bold text-emerald-600 animate-pulse";
         }
 
+        // 한국어 숫자를 말해주는 TTS 엔진
+        function speakKoreanNumber(numText) {
+            if ('speechSynthesis' in window) {
+                // 기존 진행 중인 모든 음성을 취소해 버퍼 중복 밀림을 방지
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(numText);
+                utterance.lang = 'ko-KR';
+                utterance.rate = 1.2; // 약간 빠르게 설정하여 긴장감 유도
+                utterance.pitch = 1.0;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
         // 5초 카운트다운 팝업 연동 룰렛 가동부 (기대감 극대화)
         function drawRandomSeatsWithCountdown() {
             initAudio();
@@ -1048,23 +1047,41 @@
             // --- 5초 고해상도 카운트다운 인터랙티브 팝업 개시 ---
             const popupOverlay = document.getElementById('countdownPopupOverlay');
             const popupNumber = document.getElementById('countdownPopupNumber');
+            const progressBar = document.getElementById('countdownProgressBar');
+            
             popupOverlay.classList.remove('hidden');
+            progressBar.style.transform = 'scaleX(0)';
 
             let count = 5;
             popupNumber.innerText = count;
             
-            // "5" 시작음 탑재
+            // "5" 음성 및 음향 재생
             playCountdownPitch(count);
+            speakKoreanNumber("오");
+
+            // 프로그레스 바 가동
+            setTimeout(() => {
+                progressBar.style.transform = 'scaleX(1)';
+            }, 50);
 
             const interval = setInterval(() => {
                 count--;
                 if (count > 0) {
                     popupNumber.innerText = count;
                     playCountdownPitch(count);
+                    
+                    // 한국어 음성 대칭 매핑
+                    let speechWord = "일";
+                    if (count === 4) speechWord = "사";
+                    else if (count === 3) speechWord = "삼";
+                    else if (count === 2) speechWord = "이";
+                    speakKoreanNumber(speechWord);
+                    
                 } else if (count === 0) {
                     popupNumber.innerText = "LAUNCH";
                     popupNumber.classList.add('scale-110');
                     playCountdownPitch(0);
+                    speakKoreanNumber("공개");
                 } else {
                     clearInterval(interval);
                     popupOverlay.classList.add('hidden');
@@ -1122,8 +1139,8 @@
             renderGroupSeating();
             renderDiscussionInputs();
 
-            // 타이머 완료음 수준의 축하 우주 알람 팡파레 재생!
-            playMissionCompleteSound();
+            // 짧고 강력한 팝업창 종료 효과음 즉시 실행!
+            playShortImpactSound();
 
             statusMsg.innerText = `완료: 제외 번호를 제외한 총 ${studentPool.length}명의 번호가 임의의 좌석에 배치되었습니다!`;
             statusMsg.className = "text-xs font-bold text-cyan-600 animate-pulse";
