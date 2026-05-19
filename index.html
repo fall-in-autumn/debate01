@@ -84,30 +84,30 @@
                         <i class="fa-solid fa-space-shuttle text-indigo-600 text-2xl rotate-[-45deg] animate-pulse"></i>
                     </div>
                     <div>
-                        <h1 class="text-xl md:text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 digital-font">
+                        <h1 class="text-2xl md:text-3xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 digital-font">
                             SPACE MISSION CONTROL
                         </h1>
-                        <p class="text-xs text-indigo-500 font-extrabold tracking-widest uppercase mt-0.5">함께 이야기하고 경청하는 토론 가이드</p>
+                        <p class="text-sm text-indigo-500 font-extrabold tracking-widest uppercase mt-0.5">함께 이야기하고 경청하는 토론 가이드</p>
                     </div>
                 </div>
 
                 <!-- 미션 브리핑 요약 정보 (대형) -->
-                <div class="hidden xl:flex items-center space-x-8 text-sm font-semibold">
+                <div class="hidden xl:flex items-center space-x-8 text-base font-semibold">
                     <div class="flex items-center space-x-3 bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
                         <span class="w-3 h-3 rounded-full bg-cyan-500 animate-ping"></span>
                         <span class="text-slate-500">교실 주파수:</span>
-                        <span class="font-bold text-cyan-600 digital-font text-base">SAT-01</span>
+                        <span class="font-bold text-cyan-600 digital-font text-lg">SAT-01</span>
                     </div>
                     <div class="flex items-center space-x-3 bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
                         <i class="fa-solid fa-satellite text-blue-500 text-base"></i>
                         <span class="text-slate-500">네트워크 노드:</span>
-                        <span class="font-bold text-blue-500 text-base"><span id="headerGroupCount">6</span>개 독립 모둠</span>
+                        <span class="font-bold text-blue-500 text-lg"><span id="headerGroupCount">6</span>개 독립 모둠</span>
                     </div>
                 </div>
 
                 <!-- 오디오 사운드 활성화 안내 -->
                 <div class="flex items-center">
-                    <button id="soundToggleBtn" onclick="initAudio()" class="flex items-center space-x-3 bg-gradient-to-r from-slate-50 to-indigo-50 hover:from-slate-100 hover:to-indigo-100 px-6 py-3 rounded-xl text-sm font-bold transition border border-indigo-200 shadow-sm text-indigo-700">
+                    <button id="soundToggleBtn" onclick="initAudio()" class="flex items-center space-x-3 bg-gradient-to-r from-slate-50 to-indigo-50 hover:from-slate-100 hover:to-indigo-100 px-6 py-3 rounded-xl text-base font-bold transition border border-indigo-200 shadow-sm text-indigo-700">
                         <i class="fa-solid fa-wave-square text-cyan-600 text-base"></i>
                         <span>사운드 시스템 활성화</span>
                     </button>
@@ -126,10 +126,10 @@
                     <div class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.01)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
                     
                     <div class="relative z-10 flex justify-between items-center">
-                        <span class="text-xs md:text-sm font-extrabold text-blue-600 tracking-wider flex items-center gap-2">
+                        <span class="text-sm md:text-base font-extrabold text-blue-600 tracking-wider flex items-center gap-2">
                             <i class="fa-solid fa-clock-rotate-left"></i> MISSION TIMER
                         </span>
-                        <span id="timerStatus" class="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">대기 중</span>
+                        <span id="timerStatus" class="text-sm font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">대기 중</span>
                     </div>
 
                     <!-- 타이머 원형 게이지 스케일 업 -->
@@ -142,20 +142,20 @@
                             </svg>
                             <div class="absolute flex flex-col items-center justify-center">
                                 <div id="timerDisplay" class="digital-font text-5xl md:text-6xl font-black text-slate-800 neon-text-cyan">05:00</div>
-                                <span class="text-[10px] md:text-xs text-slate-500 tracking-widest mt-1.5 font-bold">MAIN MISSION TIME</span>
+                                <span class="text-xs text-slate-500 tracking-widest mt-1.5 font-bold">MAIN MISSION TIME</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- 타이머 제어 패널 -->
                     <div class="relative z-10 grid grid-cols-4 gap-3">
-                        <button onclick="adjustTimer(60)" class="bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-cyan-500/50 text-sm font-bold py-2.5 rounded-xl transition text-cyan-600">
+                        <button onclick="adjustTimer(60)" class="bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-cyan-500/50 text-base font-bold py-2.5 rounded-xl transition text-cyan-600">
                             +1분
                         </button>
-                        <button onclick="adjustTimer(-60)" class="bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-red-500/50 text-sm font-bold py-2.5 rounded-xl transition text-red-500">
+                        <button onclick="adjustTimer(-60)" class="bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-red-500/50 text-base font-bold py-2.5 rounded-xl transition text-red-500">
                             -1분
                         </button>
-                        <button id="timerStartBtn" onclick="toggleTimer()" class="col-span-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-sm font-bold py-2.5 rounded-xl transition shadow-md flex items-center justify-center gap-2">
+                        <button id="timerStartBtn" onclick="toggleTimer()" class="col-span-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-base font-bold py-2.5 rounded-xl transition shadow-md flex items-center justify-center gap-2">
                             <i id="playIcon" class="fa-solid fa-play"></i>
                             <span id="playText">미션 가동</span>
                         </button>
@@ -165,21 +165,21 @@
                 <!-- [상단-오른쪽] 현재 미션 브리핑 카드 및 주제 목록 (8/12) -->
                 <div class="lg:col-span-8 space-y-6 flex flex-col justify-between">
                     
-                    <!-- 대형 실시간 미션 브리핑 보드 (주제 설명 없이 극단적으로 시인성 극대화) -->
+                    <!-- 대형 실시간 미션 브리핑 보드 (설명 없이 극단적으로 시인성 극대화) -->
                     <div id="activeTopicNotification" class="bg-white p-6 md:p-8 rounded-2xl border-3 border-cyan-500 shadow-md relative overflow-hidden flex-1 flex flex-col justify-center min-h-[200px]">
                         <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(6,182,212,0.04)_2px,transparent_2px)] bg-[size:100%_6px] opacity-30 pointer-events-none"></div>
                         <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent radar-scan-line pointer-events-none"></div>
 
                         <div class="flex items-center justify-between border-b border-cyan-100 pb-3 mb-4">
-                            <span class="text-xs md:text-sm font-black tracking-widest text-cyan-600 flex items-center gap-2">
+                            <span class="text-sm font-black tracking-widest text-cyan-600 flex items-center gap-2">
                                 <span class="w-3 h-3 rounded-full bg-cyan-500 animate-ping"></span>
                                 <i class="fa-solid fa-satellite-dish text-base animate-pulse"></i> CURRENT DEBATE MISSION
                             </span>
-                            <span class="bg-cyan-50 text-[10px] md:text-xs text-cyan-600 font-extrabold px-3 py-1 rounded-md border border-cyan-200">교실 메인 브리핑 타워</span>
+                            <span class="bg-cyan-50 text-xs text-cyan-600 font-extrabold px-3 py-1 rounded-md border border-cyan-200">교실 메인 브리핑 타워</span>
                         </div>
                         
                         <div class="space-y-3">
-                            <h2 id="currentTopicText" class="text-2xl md:text-3xl lg:text-4xl font-black text-slate-800 leading-snug tracking-tight text-center py-4 neon-text-cyan">
+                            <h2 id="currentTopicText" class="text-3xl md:text-4xl lg:text-5xl font-black text-slate-800 leading-snug tracking-tight text-center py-4 neon-text-cyan">
                                 ← 아래 주제 리스트에서 토론 미션을 선택해 주세요!
                             </h2>
                         </div>
@@ -188,7 +188,7 @@
                     <!-- 토론 주제 카드 리스트 & 주제 추가 기능 -->
                     <div class="bg-white rounded-2xl p-6 border border-slate-200 flex flex-col justify-between min-h-[190px] shadow-sm">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs md:text-sm font-extrabold text-indigo-600 tracking-wider flex items-center gap-2">
+                            <span class="text-sm font-extrabold text-indigo-600 tracking-wider flex items-center gap-2">
                                 <i class="fa-solid fa-pen-to-square"></i> DEBATE MISSION LIST (주제 선택 및 수정)
                             </span>
                             <span class="text-xs text-slate-400">주제별 [수정] 및 [삭제]가 가능합니다 (최소 1개 유지 필요)</span>
@@ -201,8 +201,8 @@
 
                         <!-- 주제 추가 폼 -->
                         <div class="mt-4 pt-4 border-t border-slate-100 flex gap-3">
-                            <input id="customTopicInput" type="text" placeholder="새로운 교실 토론 주제를 설계해 추가하세요..." class="flex-1 bg-slate-50 text-xs md:text-sm text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition">
-                            <button onclick="addCustomTopic()" class="bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-xs md:text-sm font-bold px-6 py-2.5 rounded-xl text-indigo-700 transition shrink-0">
+                            <input id="customTopicInput" type="text" placeholder="새로운 교실 토론 주제를 설계해 추가하세요..." class="flex-1 bg-slate-50 text-sm text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                            <button onclick="addCustomTopic()" class="bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-sm font-bold px-6 py-2.5 rounded-xl text-indigo-700 transition shrink-0">
                                 주제 생성
                             </button>
                         </div>
@@ -216,17 +216,17 @@
                 <div class="flex flex-wrap justify-between items-center mb-6 pb-4 border-b border-slate-100 gap-4">
                     <div class="flex items-center space-x-3">
                         <span class="w-3.5 h-3.5 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.2)] animate-pulse"></span>
-                        <h3 class="text-base md:text-lg font-black tracking-wider text-indigo-600 uppercase">
+                        <h3 class="text-lg md:text-xl font-black tracking-wider text-indigo-600 uppercase">
                             STATION DISCUSSION RECORD (실시간 모둠별 토론 기록지)
                         </h3>
                     </div>
                     <div class="flex items-center gap-3">
-                        <button onclick="exportToCSV()" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs md:text-sm font-black px-5 py-2.5 rounded-xl transition shadow-sm flex items-center gap-2 border border-emerald-400/30">
-                            <i class="fa-solid fa-file-excel text-base"></i>
+                        <button onclick="exportToCSV()" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-sm font-black px-5 py-2.5 rounded-xl transition shadow-sm flex items-center gap-2 border border-emerald-400/30">
+                            <i class="fa-solid fa-file-excel text-lg"></i>
                             <span>엑셀(CSV) 다운로드</span>
                         </button>
-                        <div class="text-xs text-indigo-600 font-bold bg-indigo-50 px-4 py-2 rounded-full border border-indigo-100 flex items-center gap-2">
-                            <i class="fa-solid fa-cloud-arrow-up text-sm animate-bounce"></i>
+                        <div class="text-sm text-indigo-600 font-bold bg-indigo-50 px-4 py-2 rounded-full border border-indigo-100 flex items-center gap-2">
+                            <i class="fa-solid fa-cloud-arrow-up text-base animate-bounce"></i>
                             <span>주제별 자동 보존 완료</span>
                         </div>
                     </div>
@@ -243,57 +243,57 @@
                 <div class="flex flex-wrap justify-between items-center mb-5 pb-3 border-b border-slate-100 gap-4">
                     <div class="flex items-center space-x-3">
                         <span class="w-3.5 h-3.5 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.3)] animate-pulse"></span>
-                        <h3 class="text-base md:text-lg font-black tracking-wider text-cyan-700 uppercase">
+                        <h3 class="text-lg md:text-xl font-black tracking-wider text-cyan-700 uppercase">
                             <i class="fa-solid fa-dice mr-1 text-cyan-600"></i> RANDOM SEATING GENERATOR (랜덤 모둠 배치 제어기)
                         </h3>
                     </div>
-                    <span id="generatorStatusMsg" class="text-xs font-semibold text-slate-500 transition-all duration-300">지정된 정보에 따라 빈 자리를 만들거나 번호를 섞어 배치할 수 있습니다.</span>
+                    <span id="generatorStatusMsg" class="text-sm font-semibold text-slate-500 transition-all duration-300">지정된 정보에 따라 빈 자리를 만들거나 번호를 섞어 배치할 수 있습니다.</span>
                 </div>
 
                 <!-- 컨트롤 인풋 폼 & 액션 버튼 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-4 items-end">
                     <!-- 모둠 개수 -->
                     <div class="space-y-1.5">
-                        <label class="text-xs font-extrabold text-slate-500 flex items-center gap-1.5">
+                        <label class="text-sm font-extrabold text-slate-500 flex items-center gap-1.5">
                             <i class="fa-solid fa-grip text-indigo-500"></i> 총 모둠 개수
                         </label>
-                        <input id="inputGroupCount" type="number" min="1" max="12" value="6" class="w-full bg-slate-50 text-sm font-bold text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition shadow-sm">
+                        <input id="inputGroupCount" type="number" min="1" max="12" value="6" class="w-full bg-slate-50 text-base font-bold text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition shadow-sm">
                     </div>
                     <!-- 모둠별 인원 -->
                     <div class="space-y-1.5">
-                        <label class="text-xs font-extrabold text-slate-500 flex items-center gap-1.5">
+                        <label class="text-sm font-extrabold text-slate-500 flex items-center gap-1.5">
                             <i class="fa-solid fa-user-group text-emerald-500"></i> 모둠별 인원 수
                         </label>
-                        <input id="inputMemberCount" type="number" min="1" max="8" value="5" class="w-full bg-slate-50 text-sm font-bold text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition shadow-sm">
+                        <input id="inputMemberCount" type="number" min="1" max="8" value="5" class="w-full bg-slate-50 text-base font-bold text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition shadow-sm">
                     </div>
                     <!-- 시작 번호 -->
                     <div class="space-y-1.5">
-                        <label class="text-xs font-extrabold text-slate-500 flex items-center gap-1.5">
+                        <label class="text-sm font-extrabold text-slate-500 flex items-center gap-1.5">
                             <i class="fa-solid fa-arrow-down-1-9 text-blue-500"></i> 배정 시작 번호
                         </label>
-                        <input id="inputStartNum" type="number" min="1" value="1" class="w-full bg-slate-50 text-sm font-bold text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition shadow-sm">
+                        <input id="inputStartNum" type="number" min="1" value="1" class="w-full bg-slate-50 text-base font-bold text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition shadow-sm">
                     </div>
                     <!-- 종료 번호 -->
                     <div class="space-y-1.5">
-                        <label class="text-xs font-extrabold text-slate-500 flex items-center gap-1.5">
+                        <label class="text-sm font-extrabold text-slate-500 flex items-center gap-1.5">
                             <i class="fa-solid fa-arrow-up-9-1 text-purple-500"></i> 배정 종료 번호
                         </label>
-                        <input id="inputEndNum" type="number" min="1" value="30" class="w-full bg-slate-50 text-sm font-bold text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition shadow-sm">
+                        <input id="inputEndNum" type="number" min="1" value="30" class="w-full bg-slate-50 text-base font-bold text-slate-800 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 transition shadow-sm">
                     </div>
                     <!-- 제외 번호 필터 (결석생 제외) -->
                     <div class="space-y-1.5">
-                        <label class="text-xs font-extrabold text-red-500 flex items-center gap-1.5">
+                        <label class="text-sm font-extrabold text-red-500 flex items-center gap-1.5">
                             <i class="fa-solid fa-user-slash text-red-500"></i> 제외할 번호 (결석)
                         </label>
-                        <input id="inputExcludeNums" type="text" placeholder="예: 3, 15" class="w-full bg-red-50/55 text-sm font-bold text-red-700 px-4 py-2.5 rounded-xl border border-red-200 focus:outline-none focus:border-red-500 transition shadow-sm placeholder-red-300">
+                        <input id="inputExcludeNums" type="text" placeholder="예: 3, 15" class="w-full bg-red-50/55 text-base font-bold text-red-700 px-4 py-2.5 rounded-xl border border-red-200 focus:outline-none focus:border-red-500 transition shadow-sm placeholder-red-300">
                     </div>
                     <!-- 실행 제어 패널 -->
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="createCustomGroups()" class="bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 text-xs md:text-sm font-bold py-3 px-3 rounded-xl transition shadow-sm flex items-center justify-center gap-1.5">
+                        <button onclick="createCustomGroups()" class="bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 text-sm font-bold py-3 px-3 rounded-xl transition shadow-sm flex items-center justify-center gap-1.5">
                             <i class="fa-solid fa-square-plus"></i>
                             <span>모둠 만들기</span>
                         </button>
-                        <button onclick="drawRandomSeatsWithCountdown()" class="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs md:text-sm font-bold py-3 px-3 rounded-xl transition shadow-md flex items-center justify-center gap-1.5">
+                        <button onclick="drawRandomSeatsWithCountdown()" class="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-sm font-bold py-3 px-3 rounded-xl transition shadow-md flex items-center justify-center gap-1.5">
                             <i class="fa-solid fa-shuffle"></i>
                             <span>모둠 뽑기</span>
                         </button>
@@ -304,13 +304,13 @@
             <!-- [하단 영역] 모둠 배치도 가로형 와이드 레이아웃 (의리T 요청: 한 줄에 무조건 3개 배치하도록 대폭 확대 개편) -->
             <section class="space-y-4">
                 <div class="flex items-center justify-between px-1">
-                    <span class="text-xs md:text-sm font-extrabold text-slate-500 tracking-widest uppercase flex items-center gap-2">
+                    <span class="text-sm md:text-base font-extrabold text-slate-500 tracking-widest uppercase flex items-center gap-2">
                         <i class="fa-solid fa-network-wired text-cyan-600"></i> CREW SEATING SYSTEM (승무원 모둠 자리 배치도)
                     </span>
                     <span class="text-xs text-slate-400">학생 이름 클릭 후 아래 "모둠장 배찌"를 누르면 대장이 설정되며, 각 자리의 [x]를 누르면 대원이 제외됩니다.</span>
                 </div>
 
-                <!-- 한 줄에 모둠 3개 배치 전용 그리드 (grid-cols-1 md:grid-cols-2 lg:grid-cols-3) -->
+                <!-- 한 줄에 모둠 3개 배치 전용 그리드 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="groupCardsContainer">
                     <!-- JS에서 모둠 배치도 초대형 카드 동적 생성 -->
                 </div>
@@ -322,14 +322,14 @@
     <!-- [대형 카운트다운 레이어 팝업] 교실 이목 집중용 -->
     <div id="countdownPopupOverlay" class="fixed inset-0 bg-slate-900/95 backdrop-blur-2xl z-50 flex flex-col items-center justify-center hidden">
         <div class="text-center space-y-8 animate-pulse">
-            <div class="text-indigo-400 text-xl md:text-2xl font-black tracking-widest uppercase digital-font">
+            <div class="text-indigo-400 text-2xl md:text-3xl font-black tracking-widest uppercase digital-font">
                 <i class="fa-solid fa-space-shuttle rotate-[-45deg] mr-3 text-cyan-400 animate-bounce"></i> SYSTEM COOLDOWN / PRE-LAUNCH INITIATED
             </div>
             <!-- 실시간 카운팅 숫자 (네온 이펙트 강화) -->
             <div id="countdownPopupNumber" class="digital-font text-[180px] md:text-[260px] font-black text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-blue-600 select-none drop-shadow-[0_15px_60px_rgba(6,182,212,0.8)] leading-none">
                 5
             </div>
-            <div class="text-slate-300 font-extrabold text-xl md:text-3xl tracking-widest">
+            <div class="text-slate-300 font-extrabold text-2xl md:text-4xl tracking-widest">
                 우주선 좌석을 배정하는 중입니다. 궤도를 고정해 주세요!
             </div>
             <div class="w-80 h-3 bg-slate-800 rounded-full mx-auto overflow-hidden relative border border-slate-700">
@@ -341,13 +341,13 @@
     <!-- 하단 라이트모드 고품격 푸터 영역 (저작권 표시) -->
     <footer class="mt-16 border-t border-slate-200 bg-white/80 backdrop-blur-md py-6 text-center shadow-inner">
         <div class="max-w-[1750px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500">
-            <div class="flex items-center space-x-2 text-xs md:text-sm font-semibold">
-                <i class="fa-solid fa-graduation-cap text-indigo-500 text-lg"></i>
+            <div class="flex items-center space-x-2 text-sm md:text-base font-semibold">
+                <i class="fa-solid fa-graduation-cap text-indigo-500 text-xl"></i>
                 <span class="text-slate-700">의리T와 함께하는 도덕</span>
                 <span class="text-slate-300">|</span>
                 <span class="text-indigo-600 font-bold">함께 성장하는 즐거움</span>
             </div>
-            <div class="text-[10px] md:text-xs tracking-wider font-medium text-slate-400 digital-font uppercase">
+            <div class="text-xs tracking-wider font-medium text-slate-400 digital-font uppercase">
                 &copy; 2026 Space Mission Control for Moral Education. All Rights Reserved.
             </div>
         </div>
@@ -374,8 +374,8 @@
                 
                 audioInitialized = true;
                 const btn = document.getElementById('soundToggleBtn');
-                btn.innerHTML = '<i class="fa-solid fa-circle-check text-cyan-600 text-sm"></i><span>오디오 연결 완료</span>';
-                btn.className = "flex items-center space-x-3 bg-gradient-to-r from-cyan-50 to-indigo-50 px-6 py-3 rounded-xl text-sm font-bold transition border border-cyan-200 shadow-sm text-cyan-700";
+                btn.innerHTML = '<i class="fa-solid fa-circle-check text-cyan-600 text-base"></i><span>오디오 연결 완료</span>';
+                btn.className = "flex items-center space-x-3 bg-gradient-to-r from-cyan-50 to-indigo-50 px-6 py-3 rounded-xl text-base font-bold transition border border-cyan-200 shadow-sm text-cyan-700";
                 
                 // 시스템 웰컴 비프음
                 synth.triggerAttackRelease("C5", "8n");
@@ -452,14 +452,14 @@
                 clearInterval(mainTimerInterval);
                 mainTimerInterval = null;
                 document.getElementById('timerStatus').innerText = "일시 정지";
-                document.getElementById('timerStatus').className = "text-xs font-bold px-3 py-1 rounded-full bg-amber-50 text-amber-600 border border-amber-200";
+                document.getElementById('timerStatus').className = "text-sm font-bold px-3 py-1 rounded-full bg-amber-50 text-amber-600 border border-amber-200";
                 document.getElementById('playIcon').className = "fa-solid fa-play";
                 document.getElementById('playText').innerText = "미션 재개";
                 playBeep("C4", "8n");
             } else {
                 // 가동 시작
                 document.getElementById('timerStatus').innerText = "카운트다운";
-                document.getElementById('timerStatus').className = "text-xs font-bold px-3 py-1 rounded-full bg-cyan-50 text-cyan-600 border border-cyan-200 animate-pulse";
+                document.getElementById('timerStatus').className = "text-sm font-bold px-3 py-1 rounded-full bg-cyan-50 text-cyan-600 border border-cyan-200 animate-pulse";
                 document.getElementById('playIcon').className = "fa-solid fa-pause";
                 document.getElementById('playText').innerText = "미션 일시정지";
                 
@@ -478,7 +478,7 @@
                         clearInterval(mainTimerInterval);
                         mainTimerInterval = null;
                         document.getElementById('timerStatus').innerText = "미션 완료";
-                        document.getElementById('timerStatus').className = "text-xs font-bold px-3 py-1 rounded-full bg-red-50 text-red-600 border border-red-200";
+                        document.getElementById('timerStatus').className = "text-sm font-bold px-3 py-1 rounded-full bg-red-50 text-red-600 border border-red-200";
                         document.getElementById('playIcon').className = "fa-solid fa-play";
                         document.getElementById('playText').innerText = "미션 재시작";
                         
@@ -537,9 +537,9 @@
                 if (isEditing) {
                     return `
                         <div class="border border-cyan-500 bg-white p-4 rounded-xl border-l-4 ${topic.border} space-y-3 text-left shadow-sm">
-                            <span class="text-[9px] uppercase font-bold text-cyan-600 tracking-wider">TOPIC 0${topic.id} (편집 모드)</span>
+                            <span class="text-[10px] uppercase font-bold text-cyan-600 tracking-wider">TOPIC 0${topic.id} (편집 모드)</span>
                             <div class="space-y-2">
-                                <input id="editTitle-${topic.id}" type="text" value="${topic.title}" class="w-full bg-slate-50 text-xs md:text-sm text-slate-800 p-2 rounded-lg border border-slate-200 focus:outline-none focus:border-cyan-500 font-bold">
+                                <input id="editTitle-${topic.id}" type="text" value="${topic.title}" class="w-full bg-slate-50 text-sm text-slate-800 p-2 rounded-lg border border-slate-200 focus:outline-none focus:border-cyan-500 font-bold">
                             </div>
                             <div class="flex justify-end gap-2 pt-1">
                                 <button onclick="saveTopic(${topic.id})" class="bg-cyan-50 hover:bg-cyan-100 border border-cyan-200 text-xs text-cyan-700 px-3 py-1 rounded-md font-bold transition">
@@ -554,25 +554,25 @@
                 } else {
                     // 삭제 버튼 처리
                     const deleteBtn = canDelete 
-                        ? `<button onclick="deleteTopic(event, ${topic.id})" class="text-[10px] text-red-600 hover:text-red-700 bg-white px-2 py-1 rounded-md border border-slate-200 hover:border-red-500/40 transition shrink-0 shadow-sm" title="토론 주제 삭제">
-                            <i class="fa-solid fa-trash text-[9px] mr-1"></i> 삭제
+                        ? `<button onclick="deleteTopic(event, ${topic.id})" class="text-[11px] text-red-600 hover:text-red-700 bg-white px-2 py-1 rounded-md border border-slate-200 hover:border-red-500/40 transition shrink-0 shadow-sm" title="토론 주제 삭제">
+                            <i class="fa-solid fa-trash text-[10px] mr-1"></i> 삭제
                            </button>`
-                        : `<button disabled class="text-[10px] text-slate-300 bg-slate-50 px-2 py-1 rounded-md border border-slate-100 cursor-not-allowed shrink-0" title="최소 1개의 주제가 있어야 합니다">
-                            <i class="fa-solid fa-trash text-[9px] mr-1"></i> 삭제
+                        : `<button disabled class="text-[11px] text-slate-300 bg-slate-50 px-2 py-1 rounded-md border border-slate-100 cursor-not-allowed shrink-0" title="최소 1개의 주제가 있어야 합니다">
+                            <i class="fa-solid fa-trash text-[10px] mr-1"></i> 삭제
                            </button>`;
 
                     return `
                         <div class="topic-card border p-4 rounded-xl cursor-pointer transition-all duration-200 border-l-4 ${topic.border} relative overflow-hidden group ${activeClasses} text-left" onclick="selectTopic(${topic.id})">
                             <div class="flex justify-between items-start relative z-10 gap-2">
-                                <span class="text-[9px] uppercase font-bold text-slate-400 tracking-wider">TOPIC 0${topic.id}</span>
+                                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">TOPIC 0${topic.id}</span>
                                 <div class="flex gap-1">
-                                    <button onclick="startEditTopic(event, ${topic.id})" class="text-[10px] text-slate-500 hover:text-cyan-600 bg-white px-2 py-1 rounded-md border border-slate-200 hover:border-cyan-500/40 transition shrink-0 shadow-sm" title="토론 주제 수정">
-                                        <i class="fa-solid fa-pen text-[9px] mr-1"></i> 수정
+                                    <button onclick="startEditTopic(event, ${topic.id})" class="text-[11px] text-slate-500 hover:text-cyan-600 bg-white px-2 py-1 rounded-md border border-slate-200 hover:border-cyan-500/40 transition shrink-0 shadow-sm" title="토론 주제 수정">
+                                        <i class="fa-solid fa-pen text-[10px] mr-1"></i> 수정
                                     </button>
                                     ${deleteBtn}
                                 </div>
                             </div>
-                            <h3 class="text-xs md:text-sm font-black mt-2 text-slate-800 group-hover:text-cyan-600 leading-snug truncate">${topic.title}</h3>
+                            <h3 class="text-sm md:text-base font-black mt-2 text-slate-800 group-hover:text-cyan-600 leading-snug truncate">${topic.title}</h3>
                         </div>
                     `;
                 }
@@ -681,7 +681,7 @@
             selectTopic(newTopicId);
         }
 
-        // ----------------- [3. 실시간 모둠별 토론 내용 입력 엔진 (가독성 강화)] -----------------
+        // ----------------- [3. 실시간 모둠별 토론 내용 입력 엔진 (가독성 강화 - text-lg~2xl 극대화)] -----------------
         function renderDiscussionInputs() {
             const gridContainer = document.getElementById('discussionInputGrid');
             const groupIds = Object.keys(groupsState).sort((a, b) => parseInt(a) - parseInt(b));
@@ -697,15 +697,15 @@
                     captainName = groupData.students[groupData.captain] || "미지정";
                 }
 
-                // 라이트모드에 맞춘 화이트보드 텍스트 영역 스타일링 (교실 가독성용 폰트 스케일 업)
+                // 라이트모드에 맞춘 화이트보드 텍스트 영역 스타일링 (교실 가독성용 폰트 대형 스케일 업)
                 return `
                     <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 hover:border-cyan-500/40 transition duration-300 shadow-sm animate-fade-in">
                         <div class="flex justify-between items-center mb-3">
-                            <span class="text-xs md:text-sm font-black text-cyan-600 flex items-center gap-2">
-                                <i class="fa-solid fa-satellite text-sm"></i> ${groupId}모둠 스테이션
+                            <span class="text-sm md:text-base font-black text-cyan-600 flex items-center gap-2">
+                                <i class="fa-solid fa-satellite text-base"></i> ${groupId}모둠 스테이션
                             </span>
-                            <span class="text-[11px] md:text-xs text-amber-700 font-extrabold bg-amber-50 px-3 py-1 rounded-md border border-amber-200">
-                                <i class="fa-solid fa-crown text-[9px] mr-1"></i>대장: ${captainName}
+                            <span class="text-xs md:text-sm text-amber-700 font-extrabold bg-amber-50 px-3 py-1 rounded-md border border-amber-200">
+                                <i class="fa-solid fa-crown text-[10px] mr-1"></i>대장: ${captainName}
                             </span>
                         </div>
                         <textarea 
@@ -713,7 +713,7 @@
                             oninput="saveDiscussionText(${groupId}, this.value)"
                             rows="5" 
                             placeholder="이곳에 ${groupId}모둠원들이 제시한 창의적인 아이디어나 결론을 기록해 보세요..."
-                            class="w-full bg-white text-base md:text-lg lg:text-xl text-slate-800 p-4 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition resize-none placeholder-slate-400 font-semibold leading-relaxed shadow-sm"
+                            class="w-full bg-white text-lg md:text-xl lg:text-2xl text-slate-800 p-4 rounded-xl border border-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition resize-none placeholder-slate-400 font-semibold leading-relaxed shadow-sm"
                         >${textValue}</textarea>
                     </div>
                 `;
@@ -751,7 +751,7 @@
             };
         });
 
-        // 하단 모둠 자리 배치 카드 렌더링 (의리T 요청: 한 줄에 모둠 딱 3개씩 배치해 가독성 대폭 향상!)
+        // 하단 모둠 자리 배치 카드 렌더링 (의리T 요청: 한 줄에 모둠 딱 3개씩 배치해 좌석 번호 및 학생 이름 대폭 스케일 업)
         function renderGroupSeating() {
             const container = document.getElementById('groupCardsContainer');
             const groupList = Object.values(groupsState).sort((a, b) => a.id - b.id);
@@ -771,7 +771,7 @@
                         <h4 class="text-base md:text-lg font-black text-slate-800">${group.id}모둠</h4>
                     </div>
 
-                    <!-- 콤팩트 격자 자리 배치도 (좌석 및 번호 폰트 크기 업그레이드) -->
+                    <!-- 콤팩트 격자 자리 배치도 (학생들 이름 및 좌석 번호가 뒤에서도 훤히 보이도록 폰트 극대화) -->
                     <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 mb-4 relative z-10">
                         <div class="grid grid-cols-2 gap-3 max-h-[350px] overflow-y-auto pr-1">
                             ${group.students.map((student, idx) => {
@@ -798,19 +798,19 @@
                                             ×
                                         </button>
 
-                                        <!-- 대폭 키운 좌석 번호 라벨 (text-xs md:text-sm font-extrabold) -->
-                                        <span class="text-xs md:text-sm text-slate-400 font-extrabold scale-90 self-start mb-1">좌석 ${idx + 1}</span>
+                                        <!-- 대폭 키운 좌석 번호 라벨 (text-sm md:text-base font-extrabold) -->
+                                        <span class="text-sm md:text-base text-slate-500 font-extrabold scale-90 self-start mb-1">좌석 ${idx + 1}</span>
                                         
-                                        <!-- 대폭 키운 학생 이름 인풋 (text-sm md:text-base lg:text-lg font-black) -->
+                                        <!-- 대폭 키운 학생 이름 인풋 (text-base md:text-lg lg:text-xl font-black) -->
                                         <input type="text" value="${student}" 
                                             id="input-${group.id}-${idx}"
                                             oninput="updateStudentName(${group.id}, ${idx}, this.value)"
                                             onclick="event.stopPropagation(); selectSeat(${group.id}, ${idx});"
-                                            class="w-full text-center bg-transparent border-none text-slate-800 text-sm md:text-base lg:text-lg font-black focus:outline-none focus:ring-1 focus:ring-cyan-500 rounded-md p-0.5 mt-0.5" 
+                                            class="w-full text-center bg-transparent border-none text-slate-800 text-base md:text-lg lg:text-xl font-black focus:outline-none focus:ring-1 focus:ring-cyan-500 rounded-md p-0.5 mt-0.5" 
                                             placeholder="공석">
                                             
-                                        <!-- 대장 왕관 배지 -->
-                                        <span id="captainBadge-${group.id}-${idx}" class="absolute -top-2.5 -left-1.5 bg-yellow-400 text-slate-900 font-black text-[9px] px-2 py-0.5 rounded shadow-sm ${captainBadgeClass} transition-transform flex items-center gap-0.5 pointer-events-none">
+                                        <!-- 대장 왕관 배지 (대형화 매핑) -->
+                                        <span id="captainBadge-${group.id}-${idx}" class="absolute -top-2.5 -left-1.5 bg-yellow-400 text-slate-900 font-black text-[10px] px-2 py-0.5 rounded shadow-sm ${captainBadgeClass} transition-transform flex items-center gap-0.5 pointer-events-none">
                                             <i class="fa-solid fa-crown text-[8px]"></i>대장
                                         </span>
                                     </div>
@@ -822,7 +822,7 @@
                     <!-- 대장 임명 및 배지 버튼 -->
                     <div class="flex flex-col gap-2 relative z-10">
                         <div class="flex gap-2">
-                            <button onclick="assignCaptainFromSelection(${group.id})" class="flex-1 bg-slate-50 hover:bg-slate-100 border-2 border-slate-200 hover:border-purple-400 text-xs md:text-sm font-black py-3 rounded-xl text-purple-700 hover:text-purple-600 transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <button onclick="assignCaptainFromSelection(${group.id})" class="flex-1 bg-slate-50 hover:bg-slate-100 border-2 border-slate-200 hover:border-purple-400 text-sm font-black py-3 rounded-xl text-purple-700 hover:text-purple-600 transition flex items-center justify-center gap-1.5 shadow-sm">
                                 <i class="fa-solid fa-crown text-yellow-500"></i> 모둠장 배찌
                             </button>
                             <!-- 대원 추가 버튼 (+) -->
@@ -830,7 +830,7 @@
                                 <i class="fa-solid fa-plus text-xs"></i>
                             </button>
                         </div>
-                        <button onclick="resetGroupCaptain(${group.id})" class="w-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-400 hover:text-slate-600 py-2 rounded-xl text-xs transition shadow-sm" title="대장 초기화">
+                        <button onclick="resetGroupCaptain(${group.id})" class="w-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-600 py-2 rounded-xl text-xs transition shadow-sm" title="대장 초기화">
                             <i class="fa-solid fa-rotate-left mr-1"></i> 대장 초기화
                         </button>
                     </div>
@@ -993,7 +993,7 @@
             renderDiscussionInputs();
 
             statusMsg.innerText = `성공: ${groupCount}개의 모둠(각 ${memberCount}명) 빈 좌석 배치가 완비되었습니다.`;
-            statusMsg.className = "text-xs font-bold text-emerald-600 animate-pulse";
+            statusMsg.className = "text-sm font-bold text-emerald-600 animate-pulse";
         }
 
         // 한국어 숫자를 말해주는 TTS 엔진
@@ -1087,7 +1087,7 @@
                     popupOverlay.classList.add('hidden');
                     popupNumber.classList.remove('scale-110');
 
-                    // 이제 자리에 주입 완료 시킨 후 즉시 렌더링
+                    // 자리에 주입 완료 시킨 후 즉시 렌더링
                     applyDrawnSeatsToGroups(studentPool);
                 }
             }, 1000);
@@ -1143,14 +1143,14 @@
             playShortImpactSound();
 
             statusMsg.innerText = `완료: 제외 번호를 제외한 총 ${studentPool.length}명의 번호가 임의의 좌석에 배치되었습니다!`;
-            statusMsg.className = "text-xs font-bold text-cyan-600 animate-pulse";
+            statusMsg.className = "text-sm font-bold text-cyan-600 animate-pulse";
         }
 
         function showGeneratorError(msg) {
             playBeep("C3", "4n");
             const statusMsg = document.getElementById('generatorStatusMsg');
             statusMsg.innerText = `오류: ${msg}`;
-            statusMsg.className = "text-xs font-bold text-red-600";
+            statusMsg.className = "text-sm font-bold text-red-600";
         }
 
         // ----------------- [토론 결과지 엑셀/CSV 백업 내보내기 엔지니어링] -----------------
